@@ -1,0 +1,128 @@
+/* --- Global Styles --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Header --- */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* --- Navigation (Flexbox) --- */
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.nav li {
+    margin: 0 1rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.nav a:hover {
+    background-color: #555;
+}
+
+/* --- Main Layout (Grid) --- */
+.main-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Content + Sidebar */
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* --- Content and Sidebar --- */
+.content, .sidebar {
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+}
+
+/* --- Cards (Flexbox inside Grid) --- */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1 1 30%;
+    margin: 0.5rem;
+    background-color: white;
+    border: 1px solid #999;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Sidebar Images --- */
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* --- Responsive Design --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+    .nav ul {
+        flex-wrap: wrap;
+    }
+    .cards {
+        flex-direction: row;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav li {
+        margin: 0.5rem 0;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        flex: 1 1 80%;
+    }
+}
